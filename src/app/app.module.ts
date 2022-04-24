@@ -6,6 +6,7 @@ import {PetModule} from "./pet/pet.module";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {CoreModule} from "./core/core.module";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {CoreModule} from "./core/core.module";
     AppRoutingModule,
     UserModule,
     PetModule,
-    CoreModule
+    CoreModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
