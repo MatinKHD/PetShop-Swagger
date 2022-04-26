@@ -1,1 +1,35 @@
-<p>pet works!</p>
+<div class="wall">
+  <div class="container text-center">
+    <button routerLink="create-pet" class="btn  btn-color my-5">Create your Pet Catalog</button>
+    <h3 id="head" >Here Is Your Pet Catalog</h3>
+    <!--<ul class="list-group">
+       <div class="row">
+         <ng-container *ngFor="let p of petCatalog; let i =index">
+           <div *ngIf="(i+1) % 4 === 0" class="row row-cols-3"></div>
+           <div class="col">
+             <div class="card ">
+               <div class="card-body">
+                 <h5 class="card-title">{{p.name}}</h5>
+                 <img id="card-image2" src="assets/petlogo.png" alt="">
+                 <p class="card-text">{{p.id}}</p>
+                 <p class="card-text">{{p.status}}</p>
+               </div>
+             </div>
+           </div>
+         </ng-container>
+       </div>
+    </ul>-->
+    <div class="row">
+      <div *ngFor="let p of petCatalog; let i =index" class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+        <div class="card">
+          <div  class="card-body">
+            <h5 class="card-title">{{p.name}}</h5>
+            <img id="card-image" src="assets/petlogo.png" alt="">
+            <p class="card-text">{{p.id}}</p>
+            <p class="card-text">{{p.status}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

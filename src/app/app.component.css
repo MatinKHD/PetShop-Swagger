@@ -1,0 +1,10 @@
+.wall{
+  margin: 0;
+  height: auto;
+  width: 100%;
+  /*background: rgb(157,246,228);*/
+  /*background: radial-gradient(circle, rgba(157,246,228,1) 0%, rgba(176,241,219,1) 35%, rgba(124,238,223,1) 87%, rgba(58,230,202,1) 100%);*/
+  /*background: rgb(246,222,157);*/
+  /*background: radial-gradient(circle, rgba(246,222,157,1) 0%, rgb(241, 241, 141) 97%);*/
+  background: #ffffff;
+}
