@@ -8,6 +8,7 @@ import {RouterModule} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
 import {PetService} from "./services/pet.service";
 import {CommonModule} from "@angular/common";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -21,6 +22,8 @@ import {CommonModule} from "@angular/common";
     PetRoutingModule,
     RouterModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     PetService
