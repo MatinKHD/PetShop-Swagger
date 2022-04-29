@@ -1,19 +1,19 @@
 <div class="co">
   <div class="row" id="grid">
     <div class=" col-12 col-sm-6 col-md-6 col-lg-5 col-xl-5" id="wall">
-      <img src="assets/cat.jpg" alt="">
+      <img alt="" src="assets/cat.jpg">
     </div>
     <div [formGroup]="loginForm" class=" col-12 col-sm-6 col-md-6 col-lg-7 col-xl-7" id="create-form">
       <div class="form-group">
         <label for="username">Email: </label>
-        <input id="username" class="form-control" type="name" formControlName="username">
+        <input class="form-control" formControlName="username" id="username" type="name">
       </div>
       <div class="form-group">
         <label for="password">Password: </label>
-        <input id="password" class="form-control"  type="password" formControlName="password">
+        <input class="form-control" formControlName="password" id="password" type="password">
       </div>
       <div class="form-group">
-        <button class="m-2" (click)="loginUser()">Login</button>
+        <button (click)="loginUser()" class="m-2">Login</button>
         <button class="m-2" routerLink="/user/signup">Sign Up</button>
       </div>
     </div>

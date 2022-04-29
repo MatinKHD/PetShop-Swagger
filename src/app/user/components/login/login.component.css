@@ -1,14 +1,17 @@
 * {
   overflow: hidden;
 }
+
 #wall img {
   width: auto;
   height: 100vh;
 }
+
 #create-form {
   padding: 3rem;
   border-radius: 0;
 }
+
 .form-group {
   margin: 2rem;
 }
@@ -33,6 +36,7 @@
   border-radius: 1rem;
   font-size: 1.11rem;
 }
+
 .form-group button:last-child {
   border: none;
   color: white;
@@ -41,20 +45,23 @@
   padding: 0.5rem 1.7rem 0.5rem 1.7rem;
   transition: all ease 300ms;
 }
+
 .form-group button:last-child:hover {
   color: rgb(255, 255, 255);
   background-color: rgb(8, 141, 250);
   border-radius: 1rem;
   font-size: 1.11rem;
 }
+
 .form-control {
   margin-top: .5rem;
   border: solid .001rem rgba(105, 105, 105, 0.29);
   display: flex;
   justify-content: center;
 }
-@media screen and (max-width: 579px){
-  #wall{
+
+@media screen and (max-width: 579px) {
+  #wall {
     display: none;
   }
 }

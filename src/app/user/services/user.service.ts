@@ -12,6 +12,7 @@ export class UserService {
   create(body: any) {
     return this.http.post("https://petstore.swagger.io/v2/user", body);
   }
+
   login(username: string, password: string) {
     return this.http.get(`https://petstore.swagger.io/v2/user/login?username=${username}&password=${password}`);
   }

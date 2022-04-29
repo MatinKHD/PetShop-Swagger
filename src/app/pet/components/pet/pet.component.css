@@ -1,54 +1,60 @@
 
-#head{
+#head {
   display: flex;
   justify-content: center;
   height: 100px;
   line-height: 100px;
   width: auto;
   font-weight: 400;
-
-  padding: 0 5rem 5rem 5rem  ;
-  background: rgb(249,177,119);
-  background: radial-gradient(circle, rgba(249,177,119,1) 0%, rgb(241, 241, 141) 97%);
+  padding: 0 5rem 5rem 5rem;
+  background: rgb(249, 177, 119);
+  background: radial-gradient(circle, rgba(249, 177, 119, 1) 0%, rgb(241, 241, 141) 97%);
   border-radius: 100px;
   margin-bottom: 8rem;
   color: dimgray;
 }
-.btn-color{
+
+.btn-color {
   background: #f9bc2b;
   color: dimgray;
-  transition:all ease-out 300ms  ;
+  transition: all ease-out 300ms;
 }
-.btn-color:hover{
+
+.btn-color:hover {
   background-color: #f9872b;
   font-size: 1.2rem;
   color: black;
 }
+
 .card {
-  background: rgb(249,214,119);
-  background: radial-gradient(circle, rgba(249,214,119,1) 0%, rgb(252, 239, 157) 97%);
+  background: rgb(249, 214, 119);
+  background: radial-gradient(circle, rgba(249, 214, 119, 1) 0%, rgb(252, 239, 157) 97%);
   border-radius: 30px;
   display: inline-block;
   height: 200px;
   margin-bottom: 3.8rem;
   position: relative;
   width: 100%;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 800ms cubic-bezier(.25, .8, .25, 1);
 }
-.card:hover{
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+.card:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
+
 #card-image {
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
 }
-#search-group{
+
+#search-group {
   display: grid;
   grid-template-columns: auto 4.5rem;
 }
-#search-input{
+
+#search-input {
   border: solid .001rem rgba(105, 105, 105, 0.29);
   display: flex;
   justify-content: center;
