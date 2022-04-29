@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {PetService} from "../../services/pet.service";
 
 @Component({
@@ -7,23 +7,23 @@ import {PetService} from "../../services/pet.service";
   styleUrls: ['./pet.component.css']
 })
 export class PetComponent implements OnInit {
-  petCatalog!: any;
+  public petCatalog!: any;
   FPetCatalog!: any;
   constructor(private service: PetService) {
   }
 
   ngOnInit(): void {
-    this.service.getAll().subscribe((p: any) => {
+   this.getAll();
+  }
+
+  getAll(){
+    this.service.getAll(['available']).subscribe((p: any) => {
       this.petCatalog = p;
-      console.log(p);
-
-
+      this.FPetCatalog = p;
     })
-
   }
 
   search(value: any) {
-    this.FPetCatalog =   !value ? this.FPetCatalog = this.petCatalog : this.petCatalog.filter((p: any) => p.name.toLowerCase().includes(value.toLowerCase()))
-    console.log("Filter",this.FPetCatalog);
+    this.FPetCatalog =   !value ? this.FPetCatalog = this.petCatalog : this.petCatalog.filter((p: any) => p.name.toLowerCase().includes(value.toLowerCase()));
   }
 }

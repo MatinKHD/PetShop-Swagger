@@ -17,13 +17,13 @@
 .btn-color{
   background: #f9bc2b;
   color: dimgray;
-  transition:all ease-out 600ms  ;
+  transition:all ease-out 300ms  ;
 }
 .btn-color:hover{
   background-color: #f9872b;
+  font-size: 1.2rem;
   color: black;
 }
-
 .card {
   background: rgb(249,214,119);
   background: radial-gradient(circle, rgba(249,214,119,1) 0%, rgb(252, 239, 157) 97%);
@@ -44,26 +44,12 @@
   height: 5rem;
   border-radius: 50%;
 }
-#search-icon {
-  width: 1.5rem;
-}
-#search-btn {
-  height: 2.4rem;
-}
-#search-box {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 4rem;
+#search-group{
+  display: grid;
+  grid-template-columns: auto 4.5rem;
 }
 #search-input{
   border: solid .001rem rgba(105, 105, 105, 0.29);
   display: flex;
   justify-content: center;
-}
-#search-input:active{
-  border: none;
-}
-#search-group{
-  display: grid;
-  grid-template-columns: auto 4.5rem;
 }

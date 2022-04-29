@@ -5,13 +5,13 @@
     <!--Pet Catalog-->
     <!-- Search box   -->
     <div class="input-group mb-5" id="search-group">
-      <input #s (keyup.enter)="search(s.value)" aria-describedby="search-button" aria-label="Search" id="search-input" placeholder="   Search"
+      <input #s (keyup)="search(s.value)" aria-describedby="search-button" aria-label="Search" id="search-input" placeholder="   Search"
              type="text">
       <button class="btn btn-warning" id="search-button" type="button">Search</button>
     </div>
     <!-- Cards   -->
     <div class="row">
-      <div *ngFor="let p of petCatalog; let i =index" class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+      <div *ngFor="let p of FPetCatalog; let i =index" class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">{{p.name}}</h5>

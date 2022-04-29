@@ -7,7 +7,10 @@ import {HttpClient} from "@angular/common/http";
 export class PetService {
 
   constructor(private http: HttpClient ) { }
-  getAll(){
-    return this.http.get("https://petstore.swagger.io/v2/pet/findByStatus?status=available");
+  getAll(status: any){
+    return this.http.get(`https://petstore.swagger.io/v2/pet/findByStatus?status=${status}`);
+  }
+  createPet(body: Object) {
+    return  this.http.post("https://petstore.swagger.io/v2/pet",body);
   }
 }

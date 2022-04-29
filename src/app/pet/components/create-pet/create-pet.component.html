@@ -1,1 +1,24 @@
-<p>create-pet works!</p>
+<div class="container" [formGroup]="createForm">
+  <h3 id="head">Create Pet</h3>
+  <div id="create-form">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input id="name" class="form-control" formControlName="name" type="text">
+    </div>
+    <div class="form-group">
+      <label for="category">Category:</label>
+      <input id="category" class="form-control" formControlName="category" type="text">
+    </div>
+    <div class="form-group">
+      <label for="photoUrl">Photo URL:</label>
+      <input id="photoUrl" class="form-control" formControlName="photoUrl" type="text">
+    </div>
+    <div class="form-group">
+      <label for="status">Status :</label>
+      <input id="status" class="form-control" formControlName="status" type="text">
+    </div>
+    <div class="form-group">
+      <button (click)="create()">Create</button>
+    </div>
+  </div>
+</div>
