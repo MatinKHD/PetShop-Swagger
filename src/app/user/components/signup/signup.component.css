@@ -1,0 +1,117 @@
+* {
+  overflow: hidden;
+}
+
+.co {
+  margin: 0;
+  background: rgb(249, 214, 119);
+  background: radial-gradient(circle, rgb(253, 242, 215) 0%, rgb(255, 255, 255) 97%);
+}
+
+#grid {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 40rem auto;
+}
+
+#wall {
+  margin: 0;
+}
+
+#wall > img {
+  margin: auto;
+  width: 42vw;
+  height: 150.7vh;
+  border-radius: 10px;
+}
+
+#create-form {
+  padding: 3rem;
+  border-radius: 0;
+}
+
+#head {
+  display: block;
+  margin: auto;
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+  text-align: center;
+  height: 100px;
+  width: 30rem;
+  line-height: 100px;
+  font-weight: 400;
+  background: rgb(249, 177, 119);
+  background: radial-gradient(circle, rgba(249, 177, 119, 1) 0%, rgb(241, 241, 141) 97%);
+  border-radius: 108px;
+  color: dimgray;
+}
+
+.form-group {
+  margin: 2rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #444444;
+}
+
+.form-group button {
+  border: none;
+  border-radius: .5rem;
+  color: #323232;
+  background-color: #ffb700d9;
+  padding: 0.5rem 1.7rem 0.5rem 1.7rem;
+  transition: all ease 300ms;
+}
+
+.form-group button:hover {
+  color: rgba(0, 0, 0, 0.72);
+  background-color: rgba(255, 153, 0, 0.85);
+  border-radius: 1rem;
+  font-size: 1.11rem;
+}
+
+.form-control {
+  margin-top: .5rem;
+  border: solid .001rem rgba(105, 105, 105, 0.29);
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1200px) {
+  #grid {
+    height: 137vh;
+    /*background-color: #ffffff;*/
+    margin: 0;
+    display: grid;
+    grid-template-columns: auto;
+  }
+
+  #wall > img {
+    display: none;
+    margin: auto;
+    width: 40vw;
+    height: 137vh;
+  }
+
+  #create-form {
+    width: 70vw;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #grid {
+    margin: 0;
+    display: grid;
+    grid-template-columns: auto;
+  }
+
+  #wall > img {
+    display: none;
+  }
+
+  #create-form {
+    width: auto;
+  }
+}

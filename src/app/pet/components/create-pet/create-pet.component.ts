@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {PetService} from "../../services/pet.service";
-import {PetComponent} from "../pet/pet.component";
 
 @Component({
   selector: 'app-create-pet',
@@ -13,7 +12,8 @@ export class CreatePetComponent implements OnInit {
 
   constructor(
     private service: PetService,
-    ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     this.createForm = new FormGroup({
@@ -24,15 +24,17 @@ export class CreatePetComponent implements OnInit {
     })
     console.log(this.createForm.controls['name'].value);
   }
+
   create() {
     const body: any = {
       name: this.createForm.controls['name'].value,
       photoUrl: this.createForm.controls['photoUrl'].value,
       status: this.createForm.controls['status'].value
     }
-    this.service.createPet(body).subscribe({next: (res: any) => {
-      body.id = res.id;
-
-      }})
+    this.service.createPet(body).subscribe({
+      next: (res: any) => {
+        body.id = res.id;
+      }
+    })
   }
 }
