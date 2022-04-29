@@ -7,8 +7,8 @@ import {PetService} from "../../services/pet.service";
   styleUrls: ['./pet.component.css']
 })
 export class PetComponent implements OnInit {
-  public petCatalog!: any;
-  FPetCatalog!: any;
+  public petCatalog: any[] = [];
+  FPetCatalog: any[] = [];
   constructor(private service: PetService) {
   }
 
@@ -24,6 +24,13 @@ export class PetComponent implements OnInit {
   }
 
   search(value: any) {
-    this.FPetCatalog =   !value ? this.FPetCatalog = this.petCatalog : this.petCatalog.filter((p: any) => p.name.toLowerCase().includes(value.toLowerCase()));
+    return  this.FPetCatalog = !value ? this.FPetCatalog = this.petCatalog : this.petCatalog.filter((p: any)  => {
+      if(p.name === undefined){
+        return 0;
+      }
+      else {
+       return  p.name.toLowerCase().includes(value.toLowerCase())
+      }
+    });
   }
 }
