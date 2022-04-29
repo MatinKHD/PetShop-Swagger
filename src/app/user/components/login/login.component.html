@@ -1,1 +1,22 @@
-<button routerLink="/user/signup">Sign Up</button>
+<div class="co">
+  <div class="row" id="grid">
+    <div class=" col-12 col-sm-6 col-md-6 col-lg-5 col-xl-5" id="wall">
+      <img src="assets/cat.jpg" alt="">
+    </div>
+    <div [formGroup]="loginForm" class=" col-12 col-sm-6 col-md-6 col-lg-7 col-xl-7" id="create-form">
+      <div class="form-group">
+        <label for="username">Email: </label>
+        <input id="username" class="form-control" type="name" formControlName="username">
+      </div>
+      <div class="form-group">
+        <label for="password">Password: </label>
+        <input id="password" class="form-control"  type="password" formControlName="password">
+      </div>
+      <div class="form-group">
+        <button class="m-2" (click)="loginUser()">Login</button>
+        <button class="m-2" routerLink="/user/signup">Sign Up</button>
+      </div>
+    </div>
+  </div>
+</div>
+
