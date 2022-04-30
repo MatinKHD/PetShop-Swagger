@@ -17,7 +17,7 @@ export class PetComponent implements OnInit {
   }
 
   getAll(){
-    this.service.getAll(['available']).subscribe((p: any) => {
+    this.service.getAll(['pending']).subscribe((p: any) => {
       this.petCatalog = p;
       this.FPetCatalog = p;
     })

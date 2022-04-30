@@ -1,0 +1,22 @@
+<div class="main" *ngIf="!loading">
+  <div class="row" [formGroup]="updateForm">
+    <h3>View {{pet.name}}</h3>
+    <div class="form-group col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+      <label>Name: </label>
+      <input class="form-control" formControlName="name">
+    </div>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+      <label>Id: </label>
+      <input class="form-control" formControlName="id">
+    </div>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+      <label>Status: </label>
+      <input class="form-control" formControlName="status">
+    </div>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+      <label>Category: </label>
+      <input class="form-control" formControlName="category">
+    </div>
+    <button (click)="putPet()">put pet</button>
+  </div>
+</div>

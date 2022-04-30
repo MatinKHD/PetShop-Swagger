@@ -11,6 +11,9 @@ import {CommonModule} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { TableComponent } from './components/table/table.component';
 import {Ng2SmartTableModule} from "ng2-smart-table";
+import {EditComponent} from "./components/edit/edit.component";
+import { PetDetailComponent } from './components/pet-detail/pet-detail.component';
+
 
 
 
@@ -19,6 +22,8 @@ import {Ng2SmartTableModule} from "ng2-smart-table";
     PetComponent,
     CreatePetComponent,
     TableComponent,
+    EditComponent,
+    PetDetailComponent
   ],
   imports: [
     CommonModule,

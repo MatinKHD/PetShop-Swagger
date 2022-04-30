@@ -1,0 +1,8 @@
+:host /deep/ ng2-smart-table {
+  font-size: 16px;
+  background-color: #f9bc2b;
+}
+:host /deep/ ng2-smart-table thead > tr > th:first-child  {
+  background-color: #ffffff;
+  font-size: 1rem;
+}

@@ -1,0 +1,22 @@
+<div *ngIf="!loading" class="main">
+  <div class="row">
+    <h3>View {{pet.name}}</h3>
+    <div class="form-group col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+      <label>Name: </label>
+      <input class="form-control disabled" disabled [value]="pet?.name">
+    </div>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+      <label>Id: </label>
+      <input class="form-control disabled" disabled [value]="pet?.id">
+    </div>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+      <label>Status: </label>
+      <input class="form-control disabled" disabled [value]="pet?.status">
+    </div>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+      <label>Category: </label>
+      <input class="form-control disabled" disabled [value]="pet.category.name">
+    </div>
+  </div>
+</div>
+
