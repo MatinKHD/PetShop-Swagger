@@ -1,1 +1,7 @@
-<ng2-smart-table [settings]="settings" [source]="pets"  (custom)="onCustom($event)"></ng2-smart-table>
+<div [class.d-none]="!loading" id="loading">
+  <div *ngIf="loading" class="spinner-border text-primary m-5" id="loading-spinner" role="status">
+    <span class="sr-only"></span>
+  </div>
+</div>
+<ng2-smart-table (custom)="onCustom($event)" [class.d-none]="loading" [settings]="settings"
+                 [source]="pets"></ng2-smart-table>

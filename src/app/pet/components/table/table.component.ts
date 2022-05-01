@@ -10,6 +10,7 @@ import {Router} from "@angular/router";
 })
 export class TableComponent implements OnInit {
   pets!: any;
+  loading = false;
   settings = {
     actions: {
       edit: false,
@@ -20,7 +21,7 @@ export class TableComponent implements OnInit {
           title: 'View'
         },
         {
-          name:'edit',
+          name: 'edit',
           title: 'Edit'
         }
       ],
@@ -42,9 +43,13 @@ export class TableComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.petService.getAll(['sold']).subscribe(p => this.pets = p)
-    }, 1000)
+    this.getAll()
+  }
+
+  getAll() {
+    this.loading = true;
+    this.petService.getAll(['sold']).subscribe(p => this.pets = p)
+      .add(() => this.loading = false);
   }
 
   onCustom(event: any) {
@@ -52,7 +57,7 @@ export class TableComponent implements OnInit {
     if (event.action === 'view') {
 
       this.router.navigate([`pet/detail/${id}`]);
-    } else if(event.action === 'edit') {
+    } else if (event.action === 'edit') {
       this.router.navigate([`pet/edit/${id}`]);
     }
   }
