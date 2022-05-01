@@ -1,4 +1,5 @@
-<div class="main" *ngIf="!loading">
+<div *ngIf="loading" class=""></div>
+<div class="main">
   <div class="row" [formGroup]="updateForm">
     <h3>View {{pet.name}}</h3>
     <div class="form-group col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
@@ -16,6 +17,10 @@
     <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
       <label>Category: </label>
       <input class="form-control" formControlName="category">
+    </div>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+      <label>Photo: </label>
+      <input (change)="uploadPhoto($event)" class="form-control" formControlName="photoUrl" type="file">
     </div>
     <button (click)="putPet()">put pet</button>
   </div>

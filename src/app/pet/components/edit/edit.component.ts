@@ -38,6 +38,7 @@ export class EditComponent implements OnInit {
       this.updateForm.controls['id'].setValue(this.pet.id);
       this.updateForm.controls['status'].setValue(this.pet.status);
       this.updateForm.controls['category'].setValue(this.pet.category.name);
+      this.updateForm.controls['photoUrl'].setValue(this.pet.photoUrls[0]);
     }).add(() => {
       this.loading = false;
     })
@@ -49,6 +50,7 @@ export class EditComponent implements OnInit {
       id: new FormControl('', []),
       status: new FormControl('', []),
       category: new FormControl('', []),
+      photoUrl: new FormControl('', []),
     })
   }
 
@@ -61,7 +63,7 @@ export class EditComponent implements OnInit {
       },
         name: this.updateForm.controls['name'].value,
         photoUrls: [
-          "string"
+          this.updateForm.controls['photoUrl'].value,
         ],
         tags: [
           {
@@ -69,11 +71,25 @@ export class EditComponent implements OnInit {
             "name": "string"
           }
         ],
-        status: this.updateForm.controls['status'].value,
+      status: this.updateForm.controls['status'].value,
     }
-    this.petService.putPet(body).subscribe(((value:any) => {
+    this.petService.putPet(body).subscribe(((value: any) => {
       console.log(value);
       this.router.navigate(['/pet/table']);
     }))
+  }
+
+  uploadPhoto(event: any) {
+    this.loading = true;
+    let file: File = event.target.files[0];
+    let formData = new FormData();
+    formData.append('file', file);
+
+    this.petService.uploadPhoto(formData, this.id).subscribe(p => {
+      console.log(p);
+      this.router.navigate([`/pet/pet-detail/${this.id}`])
+    }).add(() => {
+      this.loading = false;
+    })
   }
 }

@@ -22,6 +22,10 @@ export class PetService {
   }
 
   putPet(body: any) {
-    return this.http.put(`https://petstore.swagger.io/v2/pet` , body);
+    return this.http.put(`https://petstore.swagger.io/v2/pet`, body);
+  }
+
+  uploadPhoto(body: any, id: string) {
+    return this.http.post(`https://petstore.swagger.io/v2/pet/${id}/uploadImage`, body)
   }
 }
