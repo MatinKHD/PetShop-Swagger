@@ -6,50 +6,49 @@
   </div>
 
   <div class="col-6">
-    <div class="text-center">
-      <div *ngIf="loading" class="spinner-border m-5" id="loading" role="status">
+    <div [class.d-none]="!loading" id="loading">
+      <div *ngIf="loading" class="spinner-border text-primary m-5" id="loading-spinner" role="status">
         <span class="sr-only"></span>
       </div>
-      <div [class.d-none]="loading" class="main">
-        <div [formGroup]="updateForm" class="row">
+    </div>
+    <div [class.d-none]="loading" class="main">
+      <div [formGroup]="updateForm" class="row">
+
+        <div class="form-group col-12 py-4">
+          <label>Name: </label>
+          <input class="form-control mt-2" formControlName="name">
+        </div>
+        <div class="col-12 py-4">
+          <label>Id: </label>
+          <input class="form-control mt-2" formControlName="id">
+        </div>
+        <div class="col-12 py-4">
+          <label>Status: </label>
+          <input class="form-control mt-2" formControlName="status">
+        </div>
+        <div class="col-12 py-4">
+          <label>Category: </label>
+          <input class="form-control mt-2" formControlName="category">
+        </div>
+        <div class="col-12 py-4">
+          <label [class.d-none]="loadingPhoto">Photo: </label>
+          <input (change)="uploadPhoto($event)" [class.d-none]="loadingPhoto" class="form-control mt-2"
+                 formControlName="photoUrl" type="file">
           <div class="text-center">
-            <h3>View {{pet.name}}</h3>
-          </div>
-          <div class="form-group col-12 py-4">
-            <label>Name: </label>
-            <input class="form-control" formControlName="name">
-          </div>
-          <div class="col-12 py-4">
-            <label>Id: </label>
-            <input class="form-control" formControlName="id">
-          </div>
-          <div class="col-12 py-4">
-            <label>Status: </label>
-            <input class="form-control" formControlName="status">
-          </div>
-          <div class="col-12 py-4">
-            <label>Category: </label>
-            <input class="form-control" formControlName="category">
-          </div>
-          <div class="col-12 py-4">
-            <label [class.d-none]="loadingPhoto">Photo: </label>
-            <input (change)="uploadPhoto($event)" [class.d-none]="loadingPhoto" class="form-control"
-                   formControlName="photoUrl" type="file">
-            <div class="text-center">
-              <div *ngIf="loadingPhoto" class="spinner-grow spinner-grow-sm mx-2" role="status">
-                <span class="sr-only"></span>
-              </div>
-              <div *ngIf="loadingPhoto" class="spinner-grow spinner-grow-sm mx-2" role="status">
-                <span class="sr-only"></span>
-              </div>
-              <div *ngIf="loadingPhoto" class="spinner-grow spinner-grow-sm mx-2" role="status">
-                <span class="sr-only"></span>
-              </div>
+            <div *ngIf="loadingPhoto" class="spinner-grow spinner-grow-sm mx-2" role="status">
+              <span class="sr-only"></span>
+            </div>
+            <div *ngIf="loadingPhoto" class="spinner-grow spinner-grow-sm mx-2" role="status">
+              <span class="sr-only"></span>
+            </div>
+            <div *ngIf="loadingPhoto" class="spinner-grow spinner-grow-sm mx-2" role="status">
+              <span class="sr-only"></span>
             </div>
           </div>
-          <button (click)="putPet()" class="btn">put pet</button>
         </div>
+        <button (click)="putPet()" class="btn">put pet</button>
       </div>
     </div>
   </div>
 </div>
+
