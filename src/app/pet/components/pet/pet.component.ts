@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {PetService} from "../../services/pet.service";
 
 @Component({
@@ -9,6 +9,7 @@ import {PetService} from "../../services/pet.service";
 export class PetComponent implements OnInit {
   public petCatalog: any[] = [];
   FPetCatalog: any[] = [];
+  loading = false;
   constructor(private service: PetService) {
   }
 
@@ -17,9 +18,12 @@ export class PetComponent implements OnInit {
   }
 
   getAll(){
+    this.loading = true
     this.service.getAll(['pending']).subscribe((p: any) => {
       this.petCatalog = p;
       this.FPetCatalog = p;
+    }).add(() => {
+      this.loading = false;
     })
   }
 

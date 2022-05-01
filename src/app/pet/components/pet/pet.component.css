@@ -1,3 +1,14 @@
+#loading {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#loading-spinner {
+  height: 5rem;
+  width: 5rem;
+}
 
 #head {
   display: flex;

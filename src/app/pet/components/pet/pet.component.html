@@ -1,11 +1,17 @@
-<div class="wall">
+<div [class.d-none]="!loading" id="loading">
+  <div *ngIf="loading" class="spinner-border text-warning m-5" id="loading-spinner" role="status">
+    <span class="sr-only"></span>
+  </div>
+</div>
+<div [class.d-none]="loading" class="wall">
   <div class="container text-center">
     <button class="btn  btn-color my-5" routerLink="create-pet">Create your Pet Catalog</button>
     <h3 id="head">Here Is Your Pet Catalog</h3>
     <!--Pet Catalog-->
     <!-- Search box   -->
     <div class="input-group mb-5" id="search-group">
-      <input #s (keyup)="search(s.value)" aria-describedby="search-button" aria-label="Search" id="search-input" placeholder="   Search"
+      <input #s (keyup)="search(s.value)" aria-describedby="search-button" aria-label="Search" id="search-input"
+             placeholder="   Search"
              type="text">
       <button class="btn btn-warning" id="search-button" type="button">Search</button>
     </div>
