@@ -13,6 +13,7 @@ export class EditComponent implements OnInit {
   updateForm: FormGroup;
   id!: string;
   loading = false;
+  loadingPhoto = false;
   pet: any = {};
 
   constructor(
@@ -54,23 +55,23 @@ export class EditComponent implements OnInit {
     })
   }
 
-  putPet(){
+  putPet() {
     let body = {
       id: this.updateForm.controls['id'].value,
       category: {
         id: 0,
         name: this.updateForm.controls['category'].value
       },
-        name: this.updateForm.controls['name'].value,
-        photoUrls: [
-          this.updateForm.controls['photoUrl'].value,
-        ],
-        tags: [
-          {
-            "id": 0,
-            "name": "string"
-          }
-        ],
+      name: this.updateForm.controls['name'].value,
+      photoUrls: [
+        this.updateForm.controls['photoUrl'].value,
+      ],
+      tags: [
+        {
+          "id": 0,
+          "name": "string"
+        }
+      ],
       status: this.updateForm.controls['status'].value,
     }
     this.petService.putPet(body).subscribe(((value: any) => {
@@ -80,7 +81,7 @@ export class EditComponent implements OnInit {
   }
 
   uploadPhoto(event: any) {
-    this.loading = true;
+    this.loadingPhoto = true;
     let file: File = event.target.files[0];
     let formData = new FormData();
     formData.append('file', file);
@@ -89,7 +90,7 @@ export class EditComponent implements OnInit {
       console.log(p);
       this.router.navigate([`/pet/pet-detail/${this.id}`])
     }).add(() => {
-      this.loading = false;
+      this.loadingPhoto = false;
     })
   }
 }

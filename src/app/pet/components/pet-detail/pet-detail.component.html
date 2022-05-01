@@ -17,10 +17,11 @@
       <label>Category: </label>
       <input class="form-control disabled" disabled [value]="pet.category.name">
     </div>
-    <!--    <div *ngFor="let img of pet?.photoUrls" class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">-->
-    <!--      <label>Category: </label>-->
-    <!--      <img [src]="img">-->
-    <!--    </div>-->
+    <div *ngFor="let img of pet?.photoUrls" class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+      <label>Category: </label>
+    </div>
+    <input [disabled]="loading"/>
+    <div *ngIf="loading" class="spinner"></div>
   </div>
 </div>
 

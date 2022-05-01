@@ -1,0 +1,43 @@
+#loading {
+  height: 5rem;
+  width: 5rem;
+}
+
+.main {
+  padding: 3rem;
+}
+
+.btn {
+  background-color: #2f89ff;
+  color: #ffffff;
+  font-weight: 400;
+  display: inline;
+  width: 8rem;
+  margin: 1rem 0.7rem 0;
+  transition: all 200ms ease-in;
+}
+
+.btn:hover {
+  font-size: 1.12rem;
+  font-weight: 500;
+  background-color: #ffffff;
+  color: #2f89ff;
+  border: 2px solid #2f89ff;
+}
+
+#img {
+  display: flex;
+  justify-content: center;
+  background: rgb(251, 251, 251);
+  background: linear-gradient(180deg, rgba(251, 251, 251, 0.2780462526807598) 0%, rgba(185, 213, 251, 1) 19%, rgba(148, 193, 252, 1) 30%, rgba(111, 172, 254, 1) 43%, rgba(83, 156, 254, 1) 59%, rgba(47, 136, 255, 1) 80%, rgba(47, 137, 255, 1) 99%);
+}
+
+#spinner h3, #spinner div {
+  height: 100vh;
+  line-height: 100vh;
+  color: white;
+  font-family: cursive;
+
+}
+
+

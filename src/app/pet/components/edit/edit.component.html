@@ -1,27 +1,55 @@
-<div *ngIf="loading" class=""></div>
-<div class="main">
-  <div class="row" [formGroup]="updateForm">
-    <h3>View {{pet.name}}</h3>
-    <div class="form-group col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-      <label>Name: </label>
-      <input class="form-control" formControlName="name">
+<div class="row">
+  <div class="col-6" id="img">
+    <div class="" id="spinner">
+      <h3>Edit {{pet.name}}</h3>
     </div>
-    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-      <label>Id: </label>
-      <input class="form-control" formControlName="id">
+  </div>
+
+  <div class="col-6">
+    <div class="text-center">
+      <div *ngIf="loading" class="spinner-border m-5" id="loading" role="status">
+        <span class="sr-only"></span>
+      </div>
+      <div [class.d-none]="loading" class="main">
+        <div [formGroup]="updateForm" class="row">
+          <div class="text-center">
+            <h3>View {{pet.name}}</h3>
+          </div>
+          <div class="form-group col-12 py-4">
+            <label>Name: </label>
+            <input class="form-control" formControlName="name">
+          </div>
+          <div class="col-12 py-4">
+            <label>Id: </label>
+            <input class="form-control" formControlName="id">
+          </div>
+          <div class="col-12 py-4">
+            <label>Status: </label>
+            <input class="form-control" formControlName="status">
+          </div>
+          <div class="col-12 py-4">
+            <label>Category: </label>
+            <input class="form-control" formControlName="category">
+          </div>
+          <div class="col-12 py-4">
+            <label [class.d-none]="loadingPhoto">Photo: </label>
+            <input (change)="uploadPhoto($event)" [class.d-none]="loadingPhoto" class="form-control"
+                   formControlName="photoUrl" type="file">
+            <div class="text-center">
+              <div *ngIf="loadingPhoto" class="spinner-grow spinner-grow-sm mx-2" role="status">
+                <span class="sr-only"></span>
+              </div>
+              <div *ngIf="loadingPhoto" class="spinner-grow spinner-grow-sm mx-2" role="status">
+                <span class="sr-only"></span>
+              </div>
+              <div *ngIf="loadingPhoto" class="spinner-grow spinner-grow-sm mx-2" role="status">
+                <span class="sr-only"></span>
+              </div>
+            </div>
+          </div>
+          <button (click)="putPet()" class="btn">put pet</button>
+        </div>
+      </div>
     </div>
-    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-      <label>Status: </label>
-      <input class="form-control" formControlName="status">
-    </div>
-    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-      <label>Category: </label>
-      <input class="form-control" formControlName="category">
-    </div>
-    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-      <label>Photo: </label>
-      <input (change)="uploadPhoto($event)" class="form-control" formControlName="photoUrl" type="file">
-    </div>
-    <button (click)="putPet()">put pet</button>
   </div>
 </div>
