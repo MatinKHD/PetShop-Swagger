@@ -4,37 +4,19 @@
 
 .co {
   margin: 0;
-  background: rgb(249, 214, 119);
-  background: radial-gradient(circle, rgb(253, 242, 215) 0%, rgb(255, 255, 255) 97%);
 }
 
-#grid {
-  margin: 0;
-  display: grid;
-  grid-template-columns: 40rem auto;
-}
-
-#wall {
-  margin: 0;
-}
-
-#wall > img {
-  margin: auto;
-  width: 42vw;
-  height: 150.7vh;
-  border-radius: 10px;
-}
-
-#create-form {
-  padding: 3rem;
-  border-radius: 0;
+#image {
+  width: 50vw;
+  height: 120vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #head {
   display: block;
   margin: auto;
-  margin-bottom: 3rem;
-  margin-top: 2rem;
   text-align: center;
   height: 100px;
   width: 30rem;
@@ -47,7 +29,7 @@
 }
 
 .form-group {
-  margin: 2rem;
+  margin: 1.1rem;
 }
 
 .form-group label {
@@ -73,45 +55,7 @@
 
 .form-control {
   margin-top: .5rem;
-  border: solid .001rem rgba(105, 105, 105, 0.29);
-  display: flex;
-  justify-content: center;
 }
 
-@media screen and (max-width: 1200px) {
-  #grid {
-    height: 137vh;
-    /*background-color: #ffffff;*/
-    margin: 0;
-    display: grid;
-    grid-template-columns: auto;
-  }
 
-  #wall > img {
-    display: none;
-    margin: auto;
-    width: 40vw;
-    height: 137vh;
-  }
 
-  #create-form {
-    width: 70vw;
-    margin: auto;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  #grid {
-    margin: 0;
-    display: grid;
-    grid-template-columns: auto;
-  }
-
-  #wall > img {
-    display: none;
-  }
-
-  #create-form {
-    width: auto;
-  }
-}

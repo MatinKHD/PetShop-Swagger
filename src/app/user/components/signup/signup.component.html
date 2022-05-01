@@ -1,10 +1,11 @@
+`
 <div [formGroup]="createUserForm" class="co">
   <h3 id="head">Create An Account</h3>
-  <div id="grid">
-    <div id="wall">
-      <img alt="" src="assets/dog.jpg">
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 pt-5 d-none d-lg-block">
+      <img alt="" id="image" src="assets/dog.jpg">
     </div>
-    <div id="create-form">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
       <div class="form-group">
         <label for="id">Id:</label>
         <input class="form-control" formControlName="id" id="id" type="text">
@@ -43,3 +44,4 @@
     </div>
   </div>
 </div>
+`
