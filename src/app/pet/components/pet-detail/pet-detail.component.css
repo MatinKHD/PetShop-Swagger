@@ -1,4 +1,28 @@
+#loading {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#loading-spinner {
+  height: 5rem;
+  width: 5rem;
+}
+
 .main {
   padding: 24px;
 }
 
+#img {
+  background: rgb(251, 251, 251);
+  background: linear-gradient(180deg, rgba(251, 251, 251, 0.2780462526807598) 0%, rgba(185, 213, 251, 1) 19%, rgba(148, 193, 252, 1) 30%, rgba(111, 172, 254, 1) 43%, rgba(83, 156, 254, 1) 59%, rgba(47, 136, 255, 1) 80%, rgba(47, 137, 255, 1) 99%);
+}
+
+#spinner h3 {
+  height: 100vh;
+  text-align: center;
+  line-height: 100vh;
+  color: white;
+  font-family: cursive;
+}

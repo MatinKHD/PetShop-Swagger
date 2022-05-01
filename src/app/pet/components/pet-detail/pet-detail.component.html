@@ -1,27 +1,36 @@
-<div *ngIf="!loading" class="main">
-  <div class="row">
-    <h3>View {{pet.name}}</h3>
-    <div class="form-group col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-      <label>Name: </label>
-      <input class="form-control disabled" disabled [value]="pet?.name">
+<div class="row">
+  <div class="col-6 d-none d-lg-block" id="img">
+    <div class="" id="spinner">
+      <h3>View {{pet.name}} Full Details</h3>
     </div>
-    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-      <label>Id: </label>
-      <input class="form-control disabled" disabled [value]="pet?.id">
+  </div>
+  <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+    <div [class.d-none]="!loading" id="loading">
+      <div *ngIf="loading" class="spinner-border text-primary m-5" id="loading-spinner" role="status">
+        <span class="sr-only"></span>
+      </div>
     </div>
-    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-      <label>Status: </label>
-      <input class="form-control disabled" disabled [value]="pet?.status">
+    <div [class.d-none]="loading" class="main">
+      <div class="row">
+        <h3 class="text-center">{{pet.name}} Details</h3>
+        <div class="form-group col-12 py-4">
+          <label>Name: </label>
+          <input [value]="pet?.name" class="form-control disabled mt-2" disabled>
+        </div>
+        <div class="col-12 py-4">
+          <label>Id: </label>
+          <input [value]="pet?.id" class="form-control disabled mt-2" disabled>
+        </div>
+        <div class="col-12 py-4">
+          <label>Status: </label>
+          <input [value]="pet?.status" class="form-control disabled mt-2" disabled>
+        </div>
+        <div class="col-12 py-4">
+          <label>Category: </label>
+          <input [value]="pet.category.name" class="form-control disabled mt-2" disabled>
+        </div>
+      </div>
     </div>
-    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-      <label>Category: </label>
-      <input class="form-control disabled" disabled [value]="pet.category.name">
-    </div>
-    <div *ngFor="let img of pet?.photoUrls" class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-      <label>Category: </label>
-    </div>
-    <input [disabled]="loading"/>
-    <div *ngIf="loading" class="spinner"></div>
   </div>
 </div>
 
