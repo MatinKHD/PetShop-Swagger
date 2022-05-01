@@ -70,3 +70,26 @@
   display: flex;
   justify-content: center;
 }
+
+#btn-parent {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+#btn-parent .dokme {
+  margin: 0 10px 5rem 10px;
+  border: none;
+  background: #f9d677;
+  color: #363636;
+  border-radius: 30px;
+  padding: 5px 40px 5px 40px;
+  transition: all 300ms ease-in-out;
+}
+
+#btn-parent .dokme:hover {
+  background-color: #f9872b;
+  font-size: 1.2rem;
+  color: black;
+}
+

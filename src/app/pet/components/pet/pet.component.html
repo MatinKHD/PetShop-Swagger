@@ -8,6 +8,11 @@
     <button class="btn  btn-color my-5" routerLink="create-pet">Create your Pet Catalog</button>
     <h3 id="head">Here Is Your Pet Catalog</h3>
     <!--Pet Catalog-->
+    <div id="btn-parent">
+      <button (click)="getAllAvailable()" class="dokme" id="btn1">Available</button>
+      <button (click)="getAllSold()" class="dokme" id="btn2">Sold</button>
+      <button (click)="getAllPending()" class="dokme" id="btn3">Pending</button>
+    </div>
     <!-- Search box   -->
     <div class="input-group mb-5" id="search-group">
       <input #s (keyup)="search(s.value)" aria-describedby="search-button" aria-label="Search" id="search-input"
