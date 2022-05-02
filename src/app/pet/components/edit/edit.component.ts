@@ -81,16 +81,22 @@ export class EditComponent implements OnInit {
   }
 
   uploadPhoto(event: any) {
-    this.loadingPhoto = true;
-    let file: File = event.target.files[0];
-    let formData = new FormData();
-    formData.append('file', file);
+    if (event.target.files[0].size <= 8000) {
+      this.loadingPhoto = true;
+      let file: File = event.target.files[0];
+      let formData = new FormData();
+      formData.append('file', file);
 
-    this.petService.uploadPhoto(formData, this.id).subscribe(p => {
-      console.log(p);
-      this.router.navigate([`/pet/pet-detail/${this.id}`])
-    }).add(() => {
-      this.loadingPhoto = false;
-    })
+      this.petService.uploadPhoto(formData, this.id).subscribe(p => {
+        console.log(p);
+
+      }).add(() => {
+        this.loadingPhoto = false;
+      })
+    } else {
+      alert("amid sadri");
+      event.target.files.value = "";
+    }
+
   }
 }

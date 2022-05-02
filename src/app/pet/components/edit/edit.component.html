@@ -32,7 +32,7 @@
         </div>
         <div class="col-12 py-4">
           <label [class.d-none]="loadingPhoto">Photo: </label>
-          <input (change)="uploadPhoto($event)" [class.d-none]="loadingPhoto" class="form-control mt-2"
+          <input (change)="uploadPhoto($event)" [class.d-none]="loadingPhoto" accept="image/*" class="form-control mt-2"
                  formControlName="photoUrl" type="file">
           <div class="text-center">
             <div *ngIf="loadingPhoto" class="spinner-grow spinner-grow-sm text-primary mx-2" role="status">
